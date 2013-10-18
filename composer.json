@@ -1,0 +1,21 @@
+{
+    "name": "bazo/nette-mediator-extension",
+    "type": "nette-addon",
+    "description": "Nette mediator compiler extension",
+    "keywords": ["nette", "mediator", "events", "event dispatcher", "extension"],
+    "homepage": "https://github.com/bazo/nette-mediator-extension",
+    "authors": [
+        {
+            "name": "Martin Bažík",
+            "email": "martin@bazo.sk",
+            "homepage": "http://bazo.sk"
+        }
+    ],
+    "require": {
+        "php": ">= 5.4.0",
+        "symfony/event-dispatcher": "@dev"
+    },
+    "autoload": {
+        "psr-0": { "Bazo\\Mediator\\": "src/" }
+    }
+}
