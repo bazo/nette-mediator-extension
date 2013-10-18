@@ -18,11 +18,11 @@ class MediatorExtension extends \Nette\DI\CompilerExtension
 
 		$containerBuilder
 				->addDefinition($this->prefix('eventDispatcher'))
-				->setClass('Mediator\LazyEventDispatcher');
+				->setClass('Bazo\Mediator\LazyEventDispatcher');
 
 		$containerBuilder
 				->addDefinition('mediator')
-				->setClass('Mediator\LazyEventDispatcher')
+				->setClass('Bazo\Mediator\LazyEventDispatcher')
 				->setFactory('@container::getService', array($this->prefix('eventDispatcher')))
 				->setAutowired(FALSE);
 	}
