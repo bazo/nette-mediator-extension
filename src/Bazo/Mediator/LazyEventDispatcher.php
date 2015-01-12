@@ -21,7 +21,7 @@ class LazyEventDispatcher extends EventDispatcher
 	protected $listeners = [];
 
 
-	public function __construct(\SystemContainer $container, array $listenersByEvent = [])
+	public function __construct(\Nette\DI\Container $container, array $listenersByEvent = [])
 	{
 		$this->container = $container;
 
