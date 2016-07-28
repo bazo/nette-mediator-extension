@@ -2,7 +2,6 @@
 
 namespace Bazo\Mediator\DI;
 
-use Nette\Framework;
 
 /**
  * Mediator extension
@@ -18,13 +17,8 @@ class MediatorExtension extends \Nette\DI\CompilerExtension
 
 		$containerBuilder
 				->addDefinition($this->prefix('eventDispatcher'))
-				->setClass('Bazo\Mediator\LazyEventDispatcher');
-
-		$containerBuilder
-				->addDefinition('mediator')
 				->setClass('Bazo\Mediator\LazyEventDispatcher')
-				->setFactory('@container::getService', array($this->prefix('eventDispatcher')))
-				->setAutowired(FALSE);
+		;
 	}
 
 
@@ -50,11 +44,10 @@ class MediatorExtension extends \Nette\DI\CompilerExtension
 		}
 
 		$containerBuilder
-			->getDefinition($this->prefix('eventDispatcher'))
-			->setArguments(['@container', $listenersMap])
+				->getDefinition($this->prefix('eventDispatcher'))
+				->setArguments(['@container', $listenersMap])
 		;
 	}
 
 
 }
-
